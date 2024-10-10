@@ -10,5 +10,6 @@ public class Main {
         System.out.println("dsdsdsds");
         System.out.println("aaa");
         System.out.println("banane");
+        System.out.println("écran");
     }
 }
