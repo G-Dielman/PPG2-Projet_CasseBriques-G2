@@ -1,16 +1,19 @@
-/*Class balle :
-
-Attributs :
-
-position Axe x (double x) et Axe y (double y)
-vitesse vecteur axe x (vx) et vecteur axe y (vy)
-Taille de la balle (Rayon)
-méthodes :
-
-Getter et Setter(modifier la position et modifier la vitesse)
-Méthode "move()" qui bouge la balle avec en ajoutant vx à x et vy à y*/
-
 public class Balle {
 
+    private double x, y , vx, vy ,taille;
 
+    public double getX(){return x;}
+    public double getY(){return y;}
+    public double getVX(){return vx;}
+    public double getVY(){return vy;}
+
+    public void setX(int newX){this.x = newX;}
+    public void setY(int newY){this.y = newY;}
+    public void setVX(int newVX){this.vx = newVX;}
+    public void setVY(int newVY){this.vy = newVY;}
+
+    public void move(){
+        x += vx;
+        y += vy;
+    }
 }
