@@ -1,7 +1,6 @@
 public class Racquette {
 
     private double x, y;
-
     //Accesseurs de "x"
     public double getX(){
         return x;
@@ -20,5 +19,4 @@ public class Racquette {
     public void setRacquette(double racquette) {
         this.racquette = racquette;
     }
-
 }
