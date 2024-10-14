@@ -1,10 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Noah ");
-        int x = 10;
-        System.out.println(x);
-
-        System.out.println("coucou");
-
+        System.out.println("s'il te plait aller");
+        System.out.println("test ENCORE ENCORE");
     }
 }
