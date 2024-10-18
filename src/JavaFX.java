@@ -38,7 +38,9 @@ public class JavaFX extends Application{
                 tabBricks[cpt] = brick;
                 int clr = 0;
                 Brick1.setStroke(Color.BLACK);
+
                 // CHiffre random pour définir une couleur aléatoire
+
                 Random rdm = new Random();
                 int randomNum = rdm.nextInt(1,5);
                 if (randomNum == 1){
