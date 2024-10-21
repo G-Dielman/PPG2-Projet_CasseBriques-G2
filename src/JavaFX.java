@@ -20,25 +20,29 @@ public class JavaFX extends Application{
     }
     @Override
     public void start (Stage stage){
-        //HBox hbox = new HBox(10); // 10 pixels d'espacement entre les éléments
+       // création Pane
         Pane pane = new Pane();
-        Scene scene = new Scene(pane, 540, 500);
+        Scene scene = new Scene(pane, 480, 400);
         stage.setTitle("HBox Example");
         stage.setScene(scene);
         stage.show();
 
-        //Rectangle rect = new Rectangle(0,0 ,100,100);
+        //Création+affichage BALLE
+        Balle ball = new Balle(240, 300,1,-1,10);
+        Circle boule = new Circle(ball.getX(),ball.getY(),10);
+        pane.getChildren().add(boule);
+
+        // création+affichage briques (5 couches de 6 briques en longueur) + couleurs
         Brick[] tabBricks= new Brick[50];
         for(int layer= 0 ;layer <5; ++layer) {
             int x = 0;
-            for (int cpt = 0; cpt < 7; ++cpt) {
-                Brick brick = new Brick(1+x, 40 * layer, true, 80, 50);
+            for (int cpt = 0; cpt < 6; ++cpt) {
+                Brick brick = new Brick(1+x, 50 * layer, true, 50, 80);
                 Rectangle Brick1 = new Rectangle(brick.getX(), brick.getY(), brick.getVer(), brick.getHor());
                 pane.getChildren().add(Brick1);
                 tabBricks[cpt] = brick;
-                int clr = 0;
                 Brick1.setStroke(Color.BLACK);
-                // CHiffre random pour définir une couleur aléatoire
+                // Chiffre random pour définir une couleur aléatoire
                 Random rdm = new Random();
                 int randomNum = rdm.nextInt(1,5);
                 if (randomNum == 1){
@@ -60,5 +64,30 @@ public class JavaFX extends Application{
 
             }
         }
+        // Animation Balle
+        AnimationTimer timer = new AnimationTimer() {
+
+            @Override
+
+
+            public void handle(long now) {
+
+                boule.setCenterX(ball.getX());
+                boule.setCenterY(ball.getY());
+
+                // Rebondir lorsque le cercle atteint les bords droites/gauche
+                if (boule.getCenterX() - boule.getRadius() <= 0 || boule.getCenterX() + boule.getRadius() >= 480) {
+                    ball.setVX(ball.getVX() * -1);
+                }
+                if (boule.getCenterY() - boule.getRadius() <= 0 || boule.getCenterY() + boule.getRadius() >= 400) {
+                    ball.setVY(ball.getVY() * -1);
+                }
+                ball.move();
+
+            }
+        };
+        timer.start();
+
+
     }
 }

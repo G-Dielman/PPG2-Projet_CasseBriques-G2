@@ -4,7 +4,7 @@ public class Brick {
     private boolean state;
     private double ver, hor;
     //Constructeur
-    public Brick(int posX, int posY,boolean state,int ver,int hor){
+    public Brick(int posX, int posY,boolean state,int hor,int ver){
         this.posX = posX;
         this.posY = posY;
         this.state = state;
@@ -23,5 +23,6 @@ public class Brick {
     public void setX(double x){this.posX = x;}
     public void setY(double y){this.posY = y;}
     public void setState(boolean state){this.state = state;}
+    //Méthode setColor
 
 }
