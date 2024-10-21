@@ -41,8 +41,9 @@ public class JavaFX extends Application{
                 Rectangle Brick1 = new Rectangle(brick.getX(), brick.getY(), brick.getVer(), brick.getHor());
                 pane.getChildren().add(Brick1);
                 tabBricks[cpt] = brick;
+                int clr = 0;
                 Brick1.setStroke(Color.BLACK);
-                // Chiffre random pour définir une couleur aléatoire
+                // CHiffre random pour définir une couleur aléatoire
                 Random rdm = new Random();
                 int randomNum = rdm.nextInt(1,5);
                 if (randomNum == 1){
