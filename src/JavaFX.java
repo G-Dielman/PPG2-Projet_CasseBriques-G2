@@ -15,80 +15,55 @@ import java.awt.*;
 import java.lang.reflect.Array;
 
 public class JavaFX extends Application{
-    public static void main(String[] args) {
-        launch(args);
-    }
     @Override
-    public void start (Stage stage){
-       // création Pane
-        Pane pane = new Pane();
-        Scene scene = new Scene(pane, 480, 400);
-        stage.setTitle("HBox Example");
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage primaryStage) throws Exception {
+        Pane root = new Pane();
+        Scene scene = new Scene(root,600,800);
+        primaryStage.setTitle("BrickBreak");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        Rectangle rec1 = new Rectangle();
+        Paddle pad = new Paddle(25,100,100,750);
+        Rectangle rec = new Rectangle(pad.getPosition().getX(),pad.getPosition().getY(),pad.getTaille().getLargeur(),pad.getTaille().getHauteur());
+        rec.setFill(Color.BLUE);
+        root.getChildren().add(rec);
+        Ball ball1 = new Ball(10,10,5,75,75);
+        Circle circ1 = new Circle(ball1.getPosition().getX(),ball1.getPosition().getY(),ball1.getRayon());
+        circ1.setFill(Color.BLACK);
+        root.getChildren().add(circ1);
+        scene.setOnKeyPressed(event ->{
+            switch (event.getCode()) {
+                case LEFT:
+                    System.out.println();
+                    if (rec.getX()>=0) {
+                        rec.setX(rec.getX() - 30);
+                        pad.setPosition(pad.getPosition().getX() - 30, pad.getPosition().getY());
+                    }
+                    break;
+                case RIGHT:
+                    if (rec.getX()<= 600-pad.getTaille().getLargeur()) {
+                        System.out.println();
+                        rec.setX(rec.getX() + 30);
+                    }
+                    break;
 
-        //Création+affichage BALLE
-        Balle ball = new Balle(240, 300,1,-1,10);
-        Circle boule = new Circle(ball.getX(),ball.getY(),10);
-        pane.getChildren().add(boule);
 
-        // création+affichage briques (5 couches de 6 briques en longueur) + couleurs
-        Brick[] tabBricks= new Brick[50];
-        for(int layer= 0 ;layer <5; ++layer) {
-            int x = 0;
-            for (int cpt = 0; cpt < 6; ++cpt) {
-                Brick brick = new Brick(1+x, 50 * layer, true, 50, 80);
-                Rectangle Brick1 = new Rectangle(brick.getX(), brick.getY(), brick.getVer(), brick.getHor());
-                pane.getChildren().add(Brick1);
-                tabBricks[cpt] = brick;
-                int clr = 0;
-                Brick1.setStroke(Color.BLACK);
-                // CHiffre random pour définir une couleur aléatoire
-                Random rdm = new Random();
-                int randomNum = rdm.nextInt(1,5);
-                if (randomNum == 1){
-                    Brick1.setFill(Color.GRAY);
-                }
-                if (randomNum ==2 ){
-                    Brick1.setFill(Color.RED);
-                }
-                if (randomNum ==3 ){
-                    Brick1.setFill(Color.BLUE);
-                }
-                if (randomNum ==4 ){
-                    Brick1.setFill(Color.YELLOW);
-                }
-                if (randomNum ==5 ){
-                    Brick1.setFill(Color.GREEN);
-                }
-                x += 80 ;
+            }});
 
-            }
-        }
-        // Animation Balle
+
+
         AnimationTimer timer = new AnimationTimer() {
-
             @Override
-
-
-            public void handle(long now) {
-
-                boule.setCenterX(ball.getX());
-                boule.setCenterY(ball.getY());
-
-                // Rebondir lorsque le cercle atteint les bords droites/gauche
-                if (boule.getCenterX() - boule.getRadius() <= 0 || boule.getCenterX() + boule.getRadius() >= 480) {
-                    ball.setVX(ball.getVX() * -1);
-                }
-                if (boule.getCenterY() - boule.getRadius() <= 0 || boule.getCenterY() + boule.getRadius() >= 400) {
-                    ball.setVY(ball.getVY() * -1);
-                }
-                ball.move();
-
+            public void handle(long l) {
+                ball1.move(600,800);
+                circ1.setCenterX(circ1.getCenterX() + ball1.getVitesseX());
+                circ1.setCenterY(circ1.getCenterY() + ball1.getVitesseY());
             }
         };
         timer.start();
 
-
+    }
+    public static void main(String[] args){
+        launch(args);
     }
 }
