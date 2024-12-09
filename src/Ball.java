@@ -1,6 +1,6 @@
 public class Ball {
     private double vitesseX, vitesseY, rayon;
-    private Position posBalle = new Position(50,0);
+    private Position posBalle = new Position(50,0); //position par défaut
 
     public Position getPosition() {
         return posBalle;
@@ -54,17 +54,18 @@ public class Ball {
         setVitesseX(vitesseX);
         setVitesseY(vitesseY);
     }
-    public void move(double x , double y){
+    public void move(double x , double y){ //Methode pour les déplacement de ball et ses repond
         this.posBalle.setX(this.posBalle.getX() + vitesseX);
         this.posBalle.setY(this.posBalle.getY() + vitesseY);
-        if (this.posBalle.getX()>= x || this.posBalle.getX() <= 0){
+        if (this.posBalle.getX()>= x || this.posBalle.getX() <= 0){ //rebondis si collision en X
             changeVitesseX();
         }
-        if (this.posBalle.getY()>= y || this.posBalle.getY() <= 0){
+        if (this.posBalle.getY()>= y || this.posBalle.getY() <= 0){ //rebondis si collision en Y
             changeVitesseY();
         }
 
     }
+    //méthode de changement de vitesse
     public void changeVitesseX (){
         this.vitesseX = -this.vitesseX;
     }

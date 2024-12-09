@@ -1,4 +1,4 @@
-public class Position {
+public class Position { //Classe pour mettre la poisition des objets
     private double x,y;
 
     public Position(double x, double y){

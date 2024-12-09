@@ -13,6 +13,7 @@ public class Brick {
         this.heightbrick.setLargeur(x);
         this.heightbrick.setHauteur(y);
     }
+    //changement des valeur boolean des briques
     public boolean isBroken() {return broken;}
 
     public void setBroken(boolean broken) {this.broken = broken;}

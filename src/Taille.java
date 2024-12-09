@@ -1,4 +1,4 @@
-public class Taille {
+public class Taille { //Classe pour indiquer la taille des objets
     private double largeur, hauteur;
     public Taille(double x, double y) {
         setHauteur(y);
