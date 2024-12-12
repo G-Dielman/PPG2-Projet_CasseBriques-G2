@@ -9,7 +9,42 @@ public abstract class GameObject {
         setShape(shape);
         setX(x);
         setY(y);
-        SetColor(color);
+        setColor(color);
     }
+    public Shape getShape(Shape shape){
+        return shape;
+
+    }
+
+    public void setShape(Shape shape) {
+        this.shape = shape;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public abstract void setX(double x);
+
+
+
+    public double getY() {
+        return y;
+    }
+
+    public abstract void setY(double y) ;
+
+
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+    public abstract Shape getShape();
+
+
 
 }
