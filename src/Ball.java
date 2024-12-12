@@ -1,5 +1,5 @@
 public class Ball {
-    private double vitesseX, vitesseY, rayon;
+    private double vitesseX, vitesseY, rayon ;
     private Position posBalle = new Position(50,0); //position par défaut
 
     public Position getPosition() {
