@@ -62,4 +62,18 @@ public class Ball extends GameObject {
         return new Circle(getX(),getY(),getRadius());
     }
 
+
+public void switchVx() {
+    this.vx = -this.vx;
+}
+
+public void switchVy() {
+    this.vy = -this.vy;
+}
+
+public void move() {
+    setX(getX() + vx);
+    setY(getY() + vy);
+}
+
 }
