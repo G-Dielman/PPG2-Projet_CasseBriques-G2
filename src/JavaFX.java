@@ -34,10 +34,10 @@ public class JavaFX extends Application{
 
         //Création de la balle
 
-        Ball ball1 = new Ball(10,10,5,75,75);
-        Circle circ1 = new Circle(ball1.getPosition().getX(),ball1.getPosition().getY(),ball1.getRayon());
-        circ1.setFill(Color.BLACK);
-        root.getChildren().add(circ1);
+        //Ball ball1 = new Ball(10,10,5,75,75);
+        //Circle circ1 = new Circle(ball1.getPosition().getX(),ball1.getPosition().getY(),ball1.getRayon());
+       // circ1.setFill(Color.BLACK);
+       // root.getChildren().add(circ1);
 
         //création des mouvement fait par le joueur
         scene.setOnKeyPressed(event ->{
