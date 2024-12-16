@@ -25,7 +25,7 @@ public abstract class RectangularGAmeObject extends GameObject implements Collid
         super(shape, x, y, color);
     }
     public boolean collideWith (Ball ball) {
-        return
+        return collideleft(ball) || collideright(ball) || collideup(ball) || collidebottom(ball);
     }
     public boolean collideleft (Ball ball) {
         return getX() == ball.getX()+ball.getRadius();
