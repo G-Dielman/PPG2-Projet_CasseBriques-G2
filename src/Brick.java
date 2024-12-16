@@ -1,4 +1,4 @@
-public class Brick {
+public abstract class Brick extends RectangularGAmeObject{
     private Taille heightbrick;
     private boolean broken = false;
     private Taille brick = new Taille(20,20);
@@ -17,6 +17,9 @@ public class Brick {
     public boolean isBroken() {return broken;}
 
     public void setBroken(boolean broken) {this.broken = broken;}
+    public void breakthis() {
+
+    }
 
 }
 

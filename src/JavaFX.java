@@ -14,7 +14,7 @@ import java.util.Random;
 import java.awt.*;
 import java.lang.reflect.Array;
 
-public class JavaFX extends Application{
+public class                                                                        JavaFX extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         //création du Pane
