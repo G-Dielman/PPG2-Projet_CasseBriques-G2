@@ -1,5 +1,4 @@
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Shape;
+import java.awt.*;
 
 public abstract class GameObject {
     private Shape shape ;
@@ -39,11 +38,14 @@ public abstract class GameObject {
 
     public Color getColor() {
         return color;
+
     }
 
     public void setColor(Color color) {
         this.color = color;
+        this.shape.setFill(color);
     }
+
     public abstract Shape getShape();
 
 
