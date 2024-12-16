@@ -39,11 +39,14 @@ public abstract class GameObject {
 
     public Color getColor() {
         return color;
+
     }
 
     public void setColor(Color color) {
         this.color = color;
+        this.shape.setFill(color);
     }
+
     public abstract Shape getShape();
 
 
