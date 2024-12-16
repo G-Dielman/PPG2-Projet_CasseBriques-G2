@@ -1,5 +1,6 @@
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class Ball extends GameObject {
@@ -48,12 +49,15 @@ public class Ball extends GameObject {
 
     @Override
     public void setX(double x) {
-
+        this.x = x;
+        ((Circle)this.shape).setCenterX(x);
 
     }
 
     @Override
     public void setY(double y) {
+        this.x = x;
+        ((Circle)this.shape).setCenterY(y);
 
     }
 

@@ -29,12 +29,14 @@ public abstract class RectangularGAmeObject extends GameObject implements Collid
     @Override
     public void setX(double x) {
         this.x = x;
+        ((Rectangle)this.shape).setX(x);
 
     }
 
     @Override
     public void setY(double y) {
         this.y = y;
+        ((Rectangle)this.shape).setY(y);
 
 
     }
