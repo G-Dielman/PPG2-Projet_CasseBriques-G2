@@ -1,4 +1,5 @@
-import java.awt.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Shape;
 
 public abstract class GameObject {
     private Shape shape ;
@@ -11,7 +12,7 @@ public abstract class GameObject {
         setY(y);
         setColor(color);
     }
-    public Shape getShape(Shape shape){
+    public Shape getShape(Shape shape){ //Il n'y as pas besoin que cette méthode recoit un attribut car c'est un getter
         return shape;
 
     }
