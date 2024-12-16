@@ -1,4 +1,4 @@
-public class Paddle {
+public class Paddle { //tout peut être supprimmé
     private Position pospaddle = new Position(50,0);
     private Taille padd = new Taille(50,50);
     public Paddle(double x, double y) {

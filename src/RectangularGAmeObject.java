@@ -1,9 +1,14 @@
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public abstract class RectangularGAmeObject extends GameObject implements Collidable {
     private double width;
     private double height;
+
+    public RectangularGAmeObject(double width,double height, double x, double y, Color color) {
+        super(new Rectangle(width, height,x,y), x, y, color);
+    }
 
     public double getWidth() {
         return width;
@@ -21,9 +26,24 @@ public abstract class RectangularGAmeObject extends GameObject implements Collid
         this.height = height;
     }
 
-    public RectangularGAmeObject(Shape shape, double x, double y, Color color) {
-        super(shape, x, y, color);
+    @Override
+    public void setX(double x) {
+        this.x = x;
+
     }
+
+    @Override
+    public void setY(double y) {
+        this.y = y;
+
+
+    }
+
+    @Override
+    public Rectangle getShape() {
+        return (Rectangle) this.shape;
+    }
+
     public boolean collideWith (Ball ball) {
         return collideleft(ball) || collideright(ball) || collideup(ball) || collidebottom(ball);
     }
@@ -38,5 +58,15 @@ public abstract class RectangularGAmeObject extends GameObject implements Collid
     }
     public boolean collidebottom (Ball ball) {
         return getY()+getHeight()== ball.getY()- ball.getRadius();
+    }
+
+    public void onCollisionWith(Ball ball) {
+        if (collideleft(ball)||collideright(ball)) {
+            ball.switchVx();
+        }
+        if (collideup(ball)||collidebottom(ball)) {
+            ball.switchVy();
+        }
+
     }
 }

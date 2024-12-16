@@ -1,4 +1,5 @@
 public abstract class Brick extends RectangularGAmeObject{
+    //tout peut être supprimmé
     private Taille heightbrick;
     private boolean broken = false;
     private Taille brick = new Taille(20,20);

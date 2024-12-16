@@ -58,8 +58,8 @@ public class Ball extends GameObject {
     }
 
     @Override
-    public Shape getShape() {
-        return new Circle(getX(),getY(),getRadius());
+    public Circle getShape() {
+        return (Circle) this.shape;
     }
 
 

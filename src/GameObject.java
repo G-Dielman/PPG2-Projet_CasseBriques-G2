@@ -2,8 +2,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 
 public abstract class GameObject {
-    private Shape shape ;
-    private double x, y ;
+    protected Shape shape ;
+    protected double x, y ;
     private Color color ;
 
     public GameObject(Shape shape, double x , double y , Color color){
@@ -12,7 +12,7 @@ public abstract class GameObject {
         setY(y);
         setColor(color);
     }
-    public Shape getShape(Shape shape){ //Il n'y as pas besoin que cette méthode recoit un attribut car c'est un getter
+    public Shape getShape(){ //Il n'y as pas besoin que cette méthode recoit un attribut car c'est un getter
         return shape;
 
     }
@@ -46,8 +46,6 @@ public abstract class GameObject {
         this.color = color;
         this.shape.setFill(color);
     }
-
-    public abstract Shape getShape();
 
 
 
