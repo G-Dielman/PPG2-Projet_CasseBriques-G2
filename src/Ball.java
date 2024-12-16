@@ -1,76 +1,65 @@
-public class Ball {
-    private double vitesseX, vitesseY, rayon ;
-    private Position posBalle = new Position(50,0); //position par défaut
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Shape;
 
-    public Position getPosition() {
-        return posBalle;
-    }
+public class Ball extends GameObject {
+    private double vx, vy;
+    private double radius;
+    private static Color DEFAUT_COLOR = Color.BLUE;
 
-    public double getVitesseX() {
-        return vitesseX;
-    }
-    public double getVitesseY(){
-        return vitesseY;
+    public Ball(double radius , double x, double y, double vx , double vy) {
+        super(new Circle(x,y,radius), x, y, DEFAUT_COLOR);
     }
 
-    public double getRayon() {
-        return rayon;
+    public double getVx() {
+        return vx;
     }
 
-    public void setPosition(double x, double y) {
-        this.posBalle.setX(x);
-        this.posBalle.setY(y);
+    public double getVy() {
+        return vy;
     }
 
-    public void setVitesseX(double vitesseX) {
-        if (vitesseX == 0){
-            throw new RuntimeException("Vitesse de la balle en X ne peut pas être null");
-        }
-        else
-            this.vitesseX = vitesseX;
-    }
-    public void setVitesseY(double vitesseY) {
-        if (vitesseY == 0){
-            throw new RuntimeException("Vitesse de la balle en Y ne peut pas être null");
-        }
-        else
-            this.vitesseY = vitesseY;
+    public double getRadius() {
+        return radius;
     }
 
-    public void setRayon(double rayon) {
-        if (rayon < 0 || rayon > 100){
-            throw new RuntimeException("Taille de balle non conforme");
-        }
-        else
-            this.rayon = rayon;
+    public void setVx(double vx) {
+        this.vx = vx;
     }
-    public Ball(double vitesseX, double vitesseY, double rayon, double x, double y){
-        setVitesseX(vitesseX);
-        setVitesseY(vitesseY);
-        setRayon(rayon);
-        setPosition(x,y);
+
+    public void setVy(double vy) {
+        this.vy = vy;
     }
-    public Ball(double vitesseX, double vitesseY){
-        setVitesseX(vitesseX);
-        setVitesseY(vitesseY);
+
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
-    public void move(double x , double y){ //Methode pour les déplacement de ball et ses repond
-        this.posBalle.setX(this.posBalle.getX() + vitesseX);
-        this.posBalle.setY(this.posBalle.getY() + vitesseY);
-        if (this.posBalle.getX()>= x || this.posBalle.getX() <= 0){ //rebondis si collision en X
-            changeVitesseX();
-        }
-        if (this.posBalle.getY()>= y || this.posBalle.getY() <= 0){ //rebondis si collision en Y
-            changeVitesseY();
-        }
+
+    @Override
+    public void setColor(Color color) {
+        super.setColor(color);
+    }
+
+    @Override
+    public Color getColor() {
+        return super.getColor();
+    }
+
+
+    @Override
+    public void setX(double x) {
+
 
     }
-    //méthode de changement de vitesse
-    public void changeVitesseX (){
-        this.vitesseX = -this.vitesseX;
+
+    @Override
+    public void setY(double y) {
+
     }
-    public void changeVitesseY (){
-        this.vitesseY = -this.vitesseY;
+
+    @Override
+    public Shape getShape() {
+        return new Circle(getX(),getY(),getRadius());
     }
 
 }
