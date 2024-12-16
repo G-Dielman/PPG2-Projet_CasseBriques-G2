@@ -1,4 +1,5 @@
-import java.awt.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Shape;
 
 public abstract class GameObject {
     private Shape shape ;
