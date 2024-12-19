@@ -5,8 +5,8 @@ public abstract class RectangularGameObject extends GameObject implements Collid
     private double width;
     private double height;
 
-    public RectangularGameObject(double width, double height, double x, double y, Color color) {
-        super(new Rectangle(width, height,x,y), x, y, color);
+    public RectangularGameObject(double x, double y,double width, double height,  Color color) {
+        super(new Rectangle(x,y,width, height), x, y, color);
     }
 
     public double getWidth() {

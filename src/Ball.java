@@ -8,7 +8,7 @@ public class Ball extends GameObject {
     private double radius;
     private static Color DEFAUT_COLOR = Color.BLUE;
 
-    public Ball(double radius , double x, double y, double vx , double vy) {
+    public Ball( double x, double y,double radius , double vx , double vy) {
         super(new Circle(x,y,radius), x, y, DEFAUT_COLOR);
         setVx(vx);
         setVy(vy);
@@ -58,7 +58,7 @@ public class Ball extends GameObject {
 
     @Override
     public void setY(double y) {
-        this.x = x;
+        this.y = y;
         ((Circle)this.shape).setCenterY(y);
 
     }
