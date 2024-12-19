@@ -1,12 +1,11 @@
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 
-public abstract class RectangularGAmeObject extends GameObject implements Collidable {
+public abstract class RectangularGameObject extends GameObject implements Collidable {
     private double width;
     private double height;
 
-    public RectangularGAmeObject(double width,double height, double x, double y, Color color) {
+    public RectangularGameObject(double width, double height, double x, double y, Color color) {
         super(new Rectangle(width, height,x,y), x, y, color);
     }
 

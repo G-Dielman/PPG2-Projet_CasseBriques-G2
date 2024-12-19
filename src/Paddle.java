@@ -1,7 +1,6 @@
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Shape;
 
-public class Paddle extends RectangularGAmeObject {
+public class Paddle extends RectangularGameObject {
 
     private static final Color DEFAULT_COLOR = Color.PURPLE;
 

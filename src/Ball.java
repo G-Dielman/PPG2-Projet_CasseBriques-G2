@@ -10,6 +10,8 @@ public class Ball extends GameObject {
 
     public Ball(double radius , double x, double y, double vx , double vy) {
         super(new Circle(x,y,radius), x, y, DEFAUT_COLOR);
+        setVx(vx);
+        setVy(vy);
     }
 
     public double getVx() {
