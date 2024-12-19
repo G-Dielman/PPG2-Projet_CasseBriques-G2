@@ -1,9 +1,14 @@
 import javafx.scene.paint.Color;
 
 public class NormalBrick extends Brick{
-    private static Color DEFAUT_COLOR = Color.GREENYELLOW;
+    public static Color DEFAUT_COLOR=Color.GREENYELLOW;
+    public NormalBrick(double x, double y, double width, double height) {
+        super(x, y, width, height,DEFAUT_COLOR );
+    }
 
-    public NormalBrick(double width, double height, double x, double y, Color color) {
-        super(width, height, x, y, color);
+    @Override
+    public void onCollisionWith(Ball ball) {
+        super.onCollisionWith(ball);
+        breakThis();
     }
 }
