@@ -75,11 +75,11 @@ public class JavaFX extends Application{
             switch (event.getCode()) {
                 case LEFT:
                     // Empêche de dépasser le bord gauche
-                    paddle.setX(Math.max(0, paddle.getX() - 5));
+                    paddle.setX(Math.max(0, paddle.getX() - 15));
                     break;
                 case RIGHT:
                     // Empêche de dépasser le bord droit
-                    paddle.setX(Math.min(scene.getWidth() - paddle.getWidth(), paddle.getX() + 5));
+                    paddle.setX(Math.min(scene.getWidth() - paddle.getWidth(), paddle.getX() + 15));
                     break;
             }
         });

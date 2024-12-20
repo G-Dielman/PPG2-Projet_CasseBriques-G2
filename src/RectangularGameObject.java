@@ -51,17 +51,16 @@ public abstract class RectangularGameObject extends GameObject implements Collid
         return  collideup(ball) || collideleft(ball) || collideright(ball) || collidebottom(ball);
     }
     public boolean collideleft (Ball ball) {
-        return (ball.getX()+ ball.getRadius() >= getX() && ball.getX()+ ball.getRadius() <= getX()+getWidth()) && (ball.getY()+ ball.getRadius()>= getY() && ball.getY()+ ball.getRadius()<= getY()+getHeight()); //emplacement 5 avec la taille max 10 et emplacement de la balle 7
+        return (ball.getX()+ ball.getRadius()+2 > getX() && ball.getX()+ ball.getRadius() < getX()+getWidth()) && (ball.getY()+ ball.getRadius()> getY() && ball.getY()+ ball.getRadius()< getY()+getHeight()); //emplacement 5 avec la taille max 10 et emplacement de la balle 7
     }
     public boolean collideright (Ball ball){
-        return (ball.getX() - ball.getRadius() <= getX() && ball.getX()- ball.getRadius() >= getX()+getWidth()) && (ball.getY() - ball.getRadius()>= getY() && ball.getY()- ball.getRadius()<= getY()+getHeight());
+        return (ball.getX() - ball.getRadius()> getX() && ball.getX()- ball.getRadius()-2 < getX()+getWidth()) && (ball.getY() - ball.getRadius()> getY() && ball.getY()- ball.getRadius()< getY()+getHeight());
     }
     public boolean collideup (Ball ball) {
-        System.out.println(ball.getY()+ ball.getRadius());
-        return (ball.getY()+ ball.getRadius() >= getY() && ball.getY()+ ball.getRadius() <= getY()+getHeight()) && (ball.getX()+ ball.getRadius()>= getX() && ball.getX()+ ball.getRadius()<= getX()+getWidth()) ;
+        return (ball.getY()+ ball.getRadius()+2 > getY() && ball.getY()+ ball.getRadius() < getY()+getHeight()) && (ball.getX()+ ball.getRadius()> getX() && ball.getX()+ ball.getRadius()< getX()+getWidth()) ;
     }
     public boolean collidebottom (Ball ball) {
-        return (ball.getY() - ball.getRadius() <= getY()+getHeight() && ball.getY() - ball.getRadius() >= getY()) && (ball.getX()- ball.getRadius()>= getX() && ball.getX()- ball.getRadius()<= getX()+getWidth());
+        return (ball.getY() - ball.getRadius() > getY() && ball.getY() - ball.getRadius()-2 < getY()+getHeight()) && (ball.getX()- ball.getRadius()> getX() && ball.getX()- ball.getRadius()< getX()+getWidth());
     }
 
     public void onCollisionWith(Ball ball) {
