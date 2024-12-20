@@ -49,16 +49,16 @@ public abstract class RectangularGameObject extends GameObject implements Collid
         return collideleft(ball) || collideright(ball) || collideup(ball) || collidebottom(ball);
     }
     public boolean collideleft (Ball ball) {
-        return getX() == ball.getX()+ball.getRadius();
+        return ball.getX() + ball.getRadius() == getX() ; //emplacement 5 avec la taille max 10 et emplacement de la balle 7
     }
     public boolean collideright (Ball ball){
-        return getX()+getWidth()==ball.getX()- ball.getRadius();
+        return ball.getX() - ball.getRadius() == getX()+getWidth()   ;
     }
     public boolean collideup (Ball ball) {
-        return getY() == ball.getY()+ ball.getRadius();
+        return ball.getY() + ball.getRadius() == getY()  ;
     }
     public boolean collidebottom (Ball ball) {
-        return getY()+getHeight()== ball.getY()- ball.getRadius();
+        return ball.getY() - ball.getRadius() == getY()+getHeight()  ;
     }
 
     public void onCollisionWith(Ball ball) {
