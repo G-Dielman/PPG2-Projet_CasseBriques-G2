@@ -13,7 +13,7 @@ public abstract class GameObject {
         setColor(color);
     }
     public Shape getShape(){ //Il n'y as pas besoin que cette méthode recoit un attribut car c'est un getter
-        return shape;
+        return this.shape;
 
     }
 
@@ -22,7 +22,7 @@ public abstract class GameObject {
     }
 
     public double getX() {
-        return x;
+        return this.x;
     }
 
     public abstract void setX(double x);
@@ -30,7 +30,7 @@ public abstract class GameObject {
 
 
     public double getY() {
-        return y;
+        return this.y;
     }
 
     public abstract void setY(double y) ;
@@ -38,7 +38,7 @@ public abstract class GameObject {
 
 
     public Color getColor() {
-        return color;
+        return this.color;
 
     }
 

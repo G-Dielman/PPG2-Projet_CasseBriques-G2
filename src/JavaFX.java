@@ -32,11 +32,11 @@ public class JavaFX extends Application{
                 int idx = row * 5 + colum;
                 int x = r.nextInt(1,3);
                 if (x == 1){
-                    bricks[idx] = new SolidBrick(colum*taillebrique+colum*space+space/2,row * 20 + row*space,taillebrique,taillebrique);
+                    bricks[idx] = new SolidBrick(colum*taillebrique+colum*space+space/2,10+(row*taillebrique),taillebrique,taillebrique);
                     root.getChildren().add(bricks[idx].shape);
                 }
                 else {
-                    bricks[idx] = new NormalBrick(colum*taillebrique+colum*space+space/2,row * 20 + row*space,taillebrique,taillebrique);
+                    bricks[idx] = new NormalBrick(colum*taillebrique+colum*space+space/2,10+(row*taillebrique),taillebrique,taillebrique);
                     root.getChildren().add(bricks[idx].shape);
                 }
             }
@@ -63,7 +63,7 @@ public class JavaFX extends Application{
         Pane root = new Pane();
         Scene scene = new Scene(root, 500, 700);
         // Création de la balle et de la raquette
-        Ball ball = new Ball(scene.getWidth()/2, scene.getHeight()-100, 10, 1, 1);
+        Ball ball = new Ball(scene.getWidth()/2, scene.getHeight()-100, 5.5, 2, 2);
         Paddle paddle = new Paddle(scene.getWidth()/2, scene.getHeight()-50 , 100, 20);
         // Ajouter les formes au pane
         root.getChildren().addAll(ball.getShape() , paddle.getShape());

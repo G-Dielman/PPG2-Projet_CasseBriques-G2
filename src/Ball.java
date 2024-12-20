@@ -12,6 +12,7 @@ public class Ball extends GameObject {
         super(new Circle(x,y,radius), x, y, DEFAUT_COLOR);
         setVx(vx);
         setVy(vy);
+        setRadius(radius);
     }
 
     public double getVx() {
@@ -23,7 +24,7 @@ public class Ball extends GameObject {
     }
 
     public double getRadius() {
-        return radius;
+        return this.radius;
     }
 
     public void setVx(double vx) {
